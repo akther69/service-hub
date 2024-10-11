@@ -30,9 +30,9 @@ def sent_text_message(vehicle_no,customer_name,total):
     
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-    from_="+18644775634",
+    from_=config("from_"),
     body=f"hi {customer_name} your vehicle {vehicle_no} service has been completed amount {total}",
-    to='+917598488180'
+    to=config("to")
     )
     print(message.sid)  
     
