@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
+from decouple import config
 
 import os
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2jysvqe)na=#7*%m#(488+rcq9^0$=(%kyh*4jdvx7co-25xm='
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -148,15 +150,13 @@ EMAIL_PORT=587
 
 EMAIL_HOST_USER="ssuhaibakther12@gmail.com"
 
-EMAIL_HOST_PASSWORD="jvwh zvnr wcmq tczw"
+EMAIL_HOST_PASSWORD=config("EMAIL_HOST_PASSWORD")
 
 EMAIL_USE_TLS= True
 
 
 # EMAIL_USE_SSL = True
 # EMAIL_PORT = 465
-
-# app password=jvwh zvnr wcmq tczw
 
 
 

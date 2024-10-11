@@ -20,9 +20,11 @@ from twilio.rest import Client
 
 import threading
 
-account_sid = 'AC8c8645a6adbefb4592db345c20723327'
+from decouple import config
 
-auth_token = 'cbc1d6a7b3d0cf09cdeb2f2b83fc1f98'
+account_sid = config("account_sid")
+
+auth_token = config("auth_token")
 
 def sent_text_message(vehicle_no,customer_name,total):
     
